@@ -17,7 +17,7 @@ function LoginForm({ switchToSignup }) {
   const handleLogin = (e) => {
     e.preventDefault();
     // Perform login logic here (validate inputs, send request, etc.)
-    console.log('Login clicked');
+    console.log('Login clicked!!!!!!!!!S');
   };
 
   return (
