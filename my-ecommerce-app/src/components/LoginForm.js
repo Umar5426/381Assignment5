@@ -16,8 +16,11 @@ function LoginForm({ switchToSignup }) {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Perform login logic here (validate inputs, send request, etc.)
-    console.log('Login clicked!!!!!!!!!S');
+    // Replace the following with your login validation and API call logic
+    if (username && password) {
+      console.log('Attempting login with:', username, password);
+      // Call your API or perform further validation here
+    }
   };
 
   return (
@@ -48,7 +51,12 @@ function LoginForm({ switchToSignup }) {
         </div>
         <button type="submit">Login</button>
       </form>
-      <p>Don't have an account? <button onClick={switchToSignup}>Signup</button></p>
+      <p>
+        Don't have an account? 
+        <button type="button" onClick={switchToSignup}>
+          Signup
+        </button>
+      </p>
     </div>
   );
 }

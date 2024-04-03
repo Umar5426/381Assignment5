@@ -4,7 +4,7 @@ Name : SignupForm.js
 Assignment : Assignment 5
 Author(s) : Rayyan Ahmed, Muhammed Umar Khan
 Submission : Apr 1, 2024
-Description : signup component for my-ecommerce-app
+Description : Signup Form component for my-ecommerce-app
 =========================================================
 */
 
@@ -18,8 +18,19 @@ function SignupForm({ switchToLogin }) {
 
   const handleSignup = (e) => {
     e.preventDefault();
-    // Perform signup logic here (validate inputs, send request, etc.)
-    console.log('Signup clicked');
+
+    // Add validation for password match
+    if (password !== confirmPassword) {
+      console.error("Passwords don't match.");
+      // Here you can set an error state and show an error message to the user
+      return;
+    }
+
+    // Replace the following with your signup validation and API call logic
+    if (username && password && email) {
+      console.log('Attempting signup with:', username, email, password);
+      // Call your API or perform further validation here
+    }
   };
 
   return (
@@ -72,7 +83,12 @@ function SignupForm({ switchToLogin }) {
         </div>
         <button type="submit">Signup</button>
       </form>
-      <p>Already have an account? <button onClick={switchToLogin}>Login</button></p>
+      <p>
+        Already have an account? 
+        <button type="button" onClick={switchToLogin}>
+          Login
+        </button>
+      </p>
     </div>
   );
 }

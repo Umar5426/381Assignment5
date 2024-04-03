@@ -12,7 +12,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Homepage from './components/Homepage';
 import Productpage from './components/ProductPage';
-import LoginPage from './components/LoginPage'; // Import the LoginPage component
+import LoginPage from './components/LoginPage'; 
 import './App.css';
 
 const App = () => {
@@ -22,7 +22,6 @@ const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/products" element={<Productpage />} />
         <Route path="/login" element={<LoginPage />} /> 
-        {/* Add other routes as needed */}
       </Routes>
     </Router>
   );
