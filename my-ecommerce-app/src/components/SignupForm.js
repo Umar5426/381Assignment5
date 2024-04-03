@@ -15,27 +15,49 @@ function SignupForm({ switchToLogin }) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSignup = (e) => {
     e.preventDefault();
-
-    // Add validation for password match
+    setErrorMessage('');
+    setSuccessMessage('');
+  
     if (password !== confirmPassword) {
-      console.error("Passwords don't match.");
-      // Here you can set an error state and show an error message to the user
+      setErrorMessage("Passwords don't match.");
       return;
     }
-
-    // Replace the following with your signup validation and API call logic
-    if (username && password && email) {
-      console.log('Attempting signup with:', username, email, password);
-      // Call your API or perform further validation here
-    }
+  
+    fetch('http://localhost:5000/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password, email }),
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else if (response.status === 400) {
+        throw new Error('Username taken.');
+      } else {
+        return response.text().then(text => { throw new Error(text || 'Network response was not ok'); });
+      }
+    })
+    .then(data => {
+      setSuccessMessage('Account created.');
+    })
+    .catch(error => {
+      console.error('Error during registration:', error);
+      setErrorMessage(error.message || error.toString());
+    });
   };
 
   return (
     <div className="signup-form">
       <h2>Signup</h2>
+      {successMessage && <div className="success-message">{successMessage}</div>}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
       <form onSubmit={handleSignup}>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
@@ -81,13 +103,10 @@ function SignupForm({ switchToLogin }) {
             required
           />
         </div>
-        <button type="submit">Signup</button>
+        <button type="submit" className="signup-button">Signup</button>
       </form>
-      <p>
-        Already have an account? 
-        <button type="button" onClick={switchToLogin}>
-          Login
-        </button>
+      <p>Already have an account? 
+        <button type="button" className="switch-to-login" onClick={switchToLogin}>Login</button>
       </p>
     </div>
   );

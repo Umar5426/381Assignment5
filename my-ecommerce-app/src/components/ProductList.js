@@ -1,22 +1,34 @@
 /*
 =========================================================
 Name : ProductList.js
-Assignment : Assignment 4
+Assignment : Assignment 5
 Author(s) : Rayyan Ahmed, Muhammed Umar Khan
-Submission : Mar 24, 2024
+Submission : April 2, 2024
 Description : product list for my-ecommerce-app
 =========================================================
 */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductItem from './ProductItem';
-import productsData from '../data/products';
 import './Products.css';
 
 const ProductList = ({ onAddToCart }) => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/products')     // fetch from backend
+            .then(response => response.json())
+            .then(data => {
+                setProducts(data);
+            })
+            .catch(error => {
+                console.error("Failed to fetch products:", error);
+            });
+    }, []);
+
     return (
         <div className="product-list">
-            {productsData.map((product) => (
+            {products.map((product) => (
                 <ProductItem key={product.id} product={product} onAddToCart={onAddToCart} />
             ))}
         </div>
@@ -24,3 +36,5 @@ const ProductList = ({ onAddToCart }) => {
 };
 
 export default ProductList;
+
+
