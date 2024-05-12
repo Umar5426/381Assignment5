@@ -1,10 +1,6 @@
 /*
 =========================================================
 Name : LoginPage.js
-Assignment : Assignment 5
-Author(s) : Rayyan Ahmed, Muhammed Umar Khan
-Submission : Apr 1, 2024
-Description : Container component for Login and Signup forms
 =========================================================
 */
 

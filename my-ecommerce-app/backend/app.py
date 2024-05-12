@@ -42,7 +42,7 @@ def login():
     data = request.json
     # Check if the username and password match a user in the list
     user = next((user for user in users if user['username'] == data['username']), None)
-    if user and user['password'] == data['password']:  # Passwords should be hashed and checked securely
+    if user and user['password'] == data['password']:  
         # Correct username and password
         return jsonify({"message": "Login successful."}), 200
     else:

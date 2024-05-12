@@ -1,10 +1,6 @@
 /*
 =========================================================
 Name : LoginForm.js
-Assignment : Assignment 5
-Author(s) : Rayyan Ahmed, Muhammed Umar Khan
-Submission : Apr 1, 2024
-Description : Login Form component for my-ecommerce-app
 =========================================================
 */
 

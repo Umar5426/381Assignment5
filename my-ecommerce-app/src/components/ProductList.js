@@ -1,10 +1,6 @@
 /*
 =========================================================
 Name : ProductList.js
-Assignment : Assignment 5
-Author(s) : Rayyan Ahmed, Muhammed Umar Khan
-Submission : April 2, 2024
-Description : product list for my-ecommerce-app
 =========================================================
 */
 

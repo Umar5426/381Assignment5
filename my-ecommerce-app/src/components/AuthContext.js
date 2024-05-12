@@ -1,10 +1,6 @@
 /*
 =========================================================
 Name : AuthContext.js
-Assignment : Assignment 5
-Author(s) : Rayyan Ahmed, Muhammed Umar Khan
-Submission : April 2, 2024
-Description : authentication check
 =========================================================
 */
 
@@ -15,13 +11,14 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  // Check if user can access product page
   const loginUser = () => {
-    localStorage.setItem('isAuthenticated', 'true'); 
+    localStorage.setItem('isAuthenticated', 'true');
     setIsAuthenticated(true);
   };
 
   const logoutUser = () => {
-    localStorage.removeItem('isAuthenticated'); 
+    localStorage.removeItem('isAuthenticated');
     setIsAuthenticated(false);
   };
 

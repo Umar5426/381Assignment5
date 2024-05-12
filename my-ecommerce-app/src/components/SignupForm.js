@@ -1,10 +1,6 @@
 /*
 =========================================================
 Name : SignupForm.js
-Assignment : Assignment 5
-Author(s) : Rayyan Ahmed, Muhammed Umar Khan
-Submission : Apr 1, 2024
-Description : Signup Form component for my-ecommerce-app
 =========================================================
 */
 

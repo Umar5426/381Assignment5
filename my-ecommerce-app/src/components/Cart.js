@@ -1,10 +1,6 @@
 /*
 =========================================================
 Name : Cart.js
-Assignment : Assignment 4
-Author(s) : Rayyan Ahmed, Muhammed Umar Khan
-Submission : Mar 24, 2024
-Description : cart component for my-ecommerce-app
 =========================================================
 */
 

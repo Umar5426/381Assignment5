@@ -1,10 +1,6 @@
 /*
 =========================================================
 Name : reviews.js
-Assignment : Assignment 4
-Author(s) : Rayyan Ahmed, Muhammed Umar Khan
-Submission : Mar 24, 2024
-Description : list of reviews for my-ecommerce-app
 =========================================================
 */
 

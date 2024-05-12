@@ -1,10 +1,6 @@
 /*
 =========================================================
 Name : ProductItem.js
-Assignment : Assignment 4
-Author(s) : Rayyan Ahmed, Muhammed Umar Khan
-Submission : Mar 24, 2024
-Description : prdocut items component for my-ecommerce-app
 =========================================================
 */
 
